@@ -18,7 +18,7 @@ The program is targeted for channels or groups which provide media such as docum
 ## Instructions
 1. You need an API ID and an API hash from Telegram which you can get from [here](https://core.telegram.org/api/obtaining_api_id#obtaining-api-id).
 2. Save the files from this repository in a folder
-3. Open the file `task_file.ods`
+3. Open the file `task_file.ods` and `Downloader.py`
    
 ### Task file setup
 Firstly, it is essential that the table has `Telegram` as its sheet name.
