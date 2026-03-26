@@ -9,10 +9,9 @@ Powerful downloader for a vector of channels or groups with options, filters and
 
 ## Motivation 
 When you know channels or groups which contain content of interest, you may want to store them on your computer. 
-
 It is also useful as the channel, or the app itself, may shut down at any time and its content would be lost.
 
-If you use telegram a lot, you may know many channels which are cool. 
+If you use Telegram a lot, you may know many channels which are cool. 
 So you can list all channels you want to download and set filtering options for each.  
 
 ## Scope
@@ -63,6 +62,8 @@ If you target an art channel that shares all kind of things art related but you 
 2. Set the value for `limit` which indicates how many files you want to download. It downloads in order from the most recent one. Set `None` if you want to get all. Be aware that content can be big in size, think of large videos. In such case, you can do one run with a resonable amount for `limit`, let it finish, and the next day you increse `limit`, do a consecutive run and so forth. Through the archiving functionality, files already downloaded will be skipped.
 3. Set `shutdown` and `beeptone` each to `True` or `False `, the former shutting down the computer when finished while the ladder makes a beep when finished. 
 4. Set the paths: `task_file_path` is the task file, `archive_file_path` where the archive file will be created/located, and `backup_folder` if you want a backup of the archive file will be created after each run. These paths pointing to a file have not a final backslash `\`.
+
+When you're done, run the downloader file and the program starts.
 
 ### Examining the archive file
 On the first run, when there is no archive file, it will be created.
