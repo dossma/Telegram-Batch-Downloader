@@ -1,69 +1,100 @@
-# Product Name
-> Short blurb about what your product does.
+# Telegram-Batch-Downloader
+Powerful downloader for a vector of channels or groups at once with options, filters and archiving functionality (i.e. duplication filter)
 
-<!-- [![NPM Version][npm-image]][npm-url] -->
-<!-- [![Build Status][travis-image]][travis-url] -->
-<!-- [![Downloads Stats][npm-downloads]][npm-url] -->
+## Features
+* List all target channels, its saving paths and filter options in a table
+* Archiving table with all relevant information of downloaded files
+* Writing data into file metadata for effective use in programs (i.e. music players) 
+* Optional shutdown after end of run
 
-One to two paragraph statement about your product and what it does.
+## Motivation 
+When you know channels or groups which contain content of interest, you may want to store them on your computer. 
+It is also useful as the channel, or the app itself, may shut down at some point. 
 
-![example image](header.png)
-<!-- <img src="https://github.com/dossma/ebook-file-renaming/blob/main/header.png" width=50% height=50%> -->
-<!-- <img src="https://github.com/dossma/ebook-file-renaming/blob/main/header.png" width="150" height="280"> -->
+## Scope
+The program is targeted for channels or groups which provide media such as documents, audio files, videos or pictures.
 
-## Motivation
+## Instructions
+1. You need an API ID and an API hash from Telegram which you can get from [here](https://core.telegram.org/api/obtaining_api_id#obtaining-api-id).
+2. Save the files from this repository in a folder
+3. Open the file `task_file.ods`
+   
+### Task file setup
+Firstly, it is essential that the table has `Telegram` as its sheet name.
 
-My motivation for this is...
+In the column `channel`, add here the channels to be downloaded
 
-## Installation
+In the column `Target Path`, add here the full paths where the content should be saved. Each path must end with a final backslash `\`.
 
-OS X & Linux:
+In the column `Media-Modus`, you can add a filter for the typer of media.
+Available filtering options:
+| Command  | Effect |
+|-------|-----|
+| `Audio` |  Only audio files |
+| `Speech`    | Only speech files |
+| `Video`  | Only video files |
+| `Photo`  | Only photos |
+| `PhotoVideo`  | Only photos and videos |
 
-```sh
-npm install my-crazy-module --save
-```
+In the column `Positive-Filter`, you can add keywords, seperated by comma, which fetch only content where those keyword occur in text/caption.
+Matchings are case-insensitive.  
 
-Windows:
+__Example 1:__
+If you want to download media in a channel containing conspiracy theories, and you want only things on 9/11 conspiracies, you could list here:
+`9/11,911,9-11,plane,flight,WTC,tower` 
 
-```sh
-edit autoexec.bat
-```
+__Example 2:__
+If you target a channel that provides military news, and you only want content of certain ships, a possible list is:
+`aircraft carrier,destroyer,speed boat` 
 
-## Usage example
+__Example 3:__
+If you target an art channel that shares all kind of things art related but you want only images from Monet, Rimbaud and Baudelaire and all kind of images from the renaissance. you could set Media-Modus:`Photo` and as Positive-Filter: `monet,rimbaud,baudelaire,renaissance`.
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+<img src="https://github.com/dossma/Telegram-Batch-Downloader/blob/master/target_table.jpg" width=100% height=100%>
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
+### Downloader file setup
+1. Paste your API ID and API hash in the designated fields.
+2. Set the value for `limit` which indicates how many files you want to download. It downloads in order from the most recent one. Set `None` if you want to get all. Be aware that content can be big in size, think of large videos. In such case, you can do one run with a resonable amount for `limit`, let it finish, and the next day you increse `limit`, do a consecutive run and so forth. Through the archiving functionality, files already downloaded will be skipped.
+3. Set `shutdown` and `beeptone` each to `True` or `False `, the former shutting down the computer when finished while the ladder makes a beep when finished. 
+4. Set the paths: `task_file_path` is the task file, `archive_file_path` where the archive file will be created/located, and `backup_folder` if you want a backup of the archive file will be created after each run. These paths pointing to a file have not a final backslash `\`.
 
+### Examining the archive file
+On the first run, when there is no archive file, it will be created.
+The archive file contains practically all information of the files which have been downloaded. 
+After each run, the file is set to write protected.
+To check which files have already be downloaded, the program looks into the column `id`, which is a unique ID for each item in a channel or group.
+In case you want to edit the file (deleting a row for example would mean that this file would be downloaded again), then de-select write protection in the file properties before opening. After saving, you must not re-activate write protection again.  
+
+<img src="https://github.com/dossma/Telegram-Batch-Downloader/blob/master/archive_table.jpg" width=100% height=100%>
+    
 ## Development setup
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+Required external libraries are
+- Telethon: [https://github.com/LonamiWebs/Telethon](https://github.com/LonamiWebs/Telethon)
+- Pandas: [https://github.com/LonamiWebs/Telethon](https://github.com/pandas-dev/pandas)
 
 ```sh
-make install
-npm test
+pip install telethon
+pip install pandas
 ```
 
-## Release History
+Downloading can be rather slow. 
 
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
-* 0.0.1
-    * Work in progress
+I recommend to install cryptg so that decrypting the received data is done in C instead of Python, which is much faster.
+
+```sh
+pip install cryptg
+```
+
+## Encouragement
+
+Notify me when there's any error or bug.
 
 ## Meta
 
-Author: Jonas Dossmann – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+Author: Jonas Dossmann
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
+Distributed under the AGPL-3.0 license.
 
 [https://github.com/dossma/](https://github.com/dossma/)
 
@@ -72,5 +103,5 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 [npm-url]: https://npmjs.org/package/datadog-metrics
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dossma/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.com/dossma/myProject
-[wiki]: https://github.com/dossma/myProject/wiki
+[travis-url]: https://travis-ci.org/dossma/node-datadog-metrics
+[wiki]: https://github.com/dossma/ebook-file-renaming/wiki
