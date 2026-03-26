@@ -37,6 +37,8 @@ Available filtering options:
 | `Photo`  | Only photos |
 | `PhotoVideo`  | Only photos and videos |
 
+If you want to get all media, leave the cell blank or type in anything else as the above commands (for example a slash `/`).
+
 In the column `Positive-Filter`, you can add keywords, seperated by comma, which fetch only content where those keyword occur in text/caption.
 Matchings are case-insensitive.  
 
