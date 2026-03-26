@@ -53,7 +53,7 @@ If you target a channel that provides military news, and you only want content o
 `aircraft carrier,destroyer,speed boat` 
 
 __Example 3:__
-If you target an art channel that shares all kind of things art related but you want only images from Monet, Rimbaud and Baudelaire and all kind of images from the renaissance. you could set Media-Modus:`Photo` and as Positive-Filter: `monet,rimbaud,baudelaire,renaissance`.
+If you target an art channel that shares all kind of things art related but you want only images from Monet, Rimbaud and Baudelaire and all kind of images from the renaissance, you could set Media-Modus:`Photo` and as Positive-Filter: `monet,rimbaud,baudelaire,renaissance`.
 
 <img src="https://github.com/dossma/Telegram-Batch-Downloader/blob/master/target_table.jpg" width=100% height=100%>
 
