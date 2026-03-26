@@ -9,7 +9,7 @@ Powerful downloader for a vector of channels or groups at once with options, fil
 
 ## Motivation 
 When you know channels or groups which contain content of interest, you may want to store them on your computer. 
-It is also useful as the channel, or the app itself, may shut down at some point. 
+It is also useful as the channel, or the app itself, may shut down at any time and its content will be lost for you.
 
 ## Scope
 The program is targeted for channels or groups which provide media such as documents, audio files, videos or pictures.
