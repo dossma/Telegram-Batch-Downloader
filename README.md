@@ -46,7 +46,7 @@ Matchings are case-insensitive.
 
 __Example 1:__
 If you want to download media in a channel containing conspiracy theories, and you want only things on 9/11 conspiracies, you could list here:
-`9/11,911,9-11,plane,flight,WTC,tower` 
+`9/11,911,9-11,plane,flight,world trade center,WTC,tower` 
 
 __Example 2:__
 If you target a channel that provides military news, and you only want content of certain ships, a possible list is:
