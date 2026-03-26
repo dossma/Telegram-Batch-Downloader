@@ -91,6 +91,10 @@ pip install cryptg
 
 Notify me when there's any error or bug.
 
+## Future Work
+
+It is planned to add a negative filter (downloading all but excluding a keyword matching pattern) and a size filter.
+
 ## Meta
 
 Author: Jonas Dossmann
