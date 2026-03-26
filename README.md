@@ -15,7 +15,7 @@ If you use Telegram a lot, you may know many channels which are cool.
 So you can list all channels you want to download and set filtering options for each.  
 
 ## Scope
-The program is targeted for channels or groups which provide media such as documents, audio files, videos or pictures.
+The program is targeted for channels or groups which provide media such as documents, audio files, videos or images.
 
 ## Instructions
 1. You need an API ID and an API hash from Telegram which you can get from [here](https://core.telegram.org/api/obtaining_api_id#obtaining-api-id).
