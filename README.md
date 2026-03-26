@@ -2,7 +2,7 @@
 Powerful downloader for a vector of channels or groups at once with options, filters and archiving functionality (i.e. duplication filter)
 
 ## Features
-* List all target channels, its saving paths and filter options in a table
+* Fetch an array of channels, designate a saving path and filter options in a table
 * Archiving table with all relevant information of downloaded files
 * Writing data into file metadata for effective use in programs (i.e. music players) 
 * Optional shutdown after end of run
