@@ -1,5 +1,5 @@
 # Telegram-Batch-Downloader
-Powerful downloader for a vector of channels or groups at once with options, filters and archiving functionality (i.e. duplication filter)
+Powerful downloader for a vector of channels or groups with options, filters and archiving functionality (i.e. duplication filter)
 
 ## Features
 * Fetch an array of channels, designate a saving path and filter options in a table
