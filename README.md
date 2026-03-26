@@ -12,6 +12,9 @@ When you know channels or groups which contain content of interest, you may want
 
 It is also useful as the channel, or the app itself, may shut down at any time and its content would be lost.
 
+If you use telegram a lot, you may know many channels which are cool. 
+So you can list all channels you want to download and set filtering options for each.  
+
 ## Scope
 The program is targeted for channels or groups which provide media such as documents, audio files, videos or pictures.
 
